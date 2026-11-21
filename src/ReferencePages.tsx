@@ -104,7 +104,7 @@ export function YearPage() {
               ))}
             </dl>
           </Disclosure>
-          <Disclosure title="Ритм обратной связи">
+          <Disclosure title="Когда обсудить, как идут занятия">
             <ul className="ref-bullets">
               {year.review.map((item) => (
                 <li key={item}>{item}</li>
