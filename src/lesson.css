@@ -1,0 +1,332 @@
+.week-page,
+.lesson-page {
+  --lesson-ink: #27332f;
+  --lesson-green: #246650;
+  --lesson-muted: #536760;
+  --lesson-line: #dce6de;
+  --lesson-card: #fffefa;
+  --lesson-tint: #eff6ef;
+  max-width: 1080px;
+  margin-inline: auto;
+  color: var(--lesson-ink);
+  font-family: "Nunito Variable", Nunito, ui-rounded, system-ui, sans-serif;
+}
+
+.lesson-back {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  max-width: 100%;
+  color: var(--lesson-green);
+  font-size: 0.96rem;
+  font-weight: 850;
+  text-decoration: none;
+}
+
+.lesson-back:hover {
+  text-decoration: underline;
+  text-underline-offset: 0.24em;
+}
+
+.lesson-heading {
+  margin-block: 18px 34px;
+}
+
+.lesson-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0 0 15px;
+}
+
+.lesson-meta span {
+  padding: 5px 12px;
+  border-radius: 30px;
+  background: var(--lesson-tint);
+  color: var(--lesson-green);
+  font-size: 0.88rem;
+  font-weight: 850;
+}
+
+.lesson-heading h1,
+.lesson-page > h1 {
+  max-width: 22ch;
+  margin: 0;
+  font-size: clamp(2.15rem, 6vw, 4.3rem);
+  font-weight: 950;
+  line-height: 1.04;
+  letter-spacing: -0.045em;
+  overflow-wrap: break-word;
+}
+
+.lesson-lead {
+  max-width: 68ch;
+  margin: 14px 0 0;
+  color: var(--lesson-muted);
+  font-size: clamp(1rem, 2vw, 1.15rem);
+  line-height: 1.55;
+}
+
+.week-page h2,
+.lesson-layout h2 {
+  margin: 0 0 14px;
+  font-size: clamp(1.35rem, 4vw, 1.75rem);
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+.week-lessons {
+  display: grid;
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.week-lesson-link {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  gap: 12px;
+  align-items: start;
+  box-sizing: border-box;
+  height: 100%;
+  padding: 17px;
+  border: 1px solid var(--lesson-line);
+  border-radius: 20px;
+  background: var(--lesson-card);
+  color: inherit;
+  text-decoration: none;
+  transition:
+    border-color 0.15s,
+    background-color 0.15s;
+}
+
+.week-lesson-link:hover {
+  border-color: var(--lesson-green);
+  background: var(--lesson-tint);
+}
+
+.week-letter {
+  display: grid;
+  place-items: center;
+  inline-size: 36px;
+  block-size: 36px;
+  border-radius: 11px;
+  background: var(--lesson-tint);
+  color: var(--lesson-green);
+  font-size: 0.95rem;
+  font-weight: 900;
+}
+
+.week-lesson-link h3 {
+  margin: 2px 0 4px;
+  font-size: 1.17rem;
+  font-weight: 900;
+  line-height: 1.2;
+}
+
+.week-lesson-link p {
+  margin: 0;
+  color: var(--lesson-muted);
+  line-height: 1.45;
+}
+
+.week-link-arrow {
+  align-self: center;
+  color: var(--lesson-green);
+  font-size: 1.25rem;
+  font-weight: 900;
+}
+
+.week-extras,
+.lesson-hints {
+  margin-top: 19px;
+}
+
+.week-extras,
+.lesson-layout {
+  display: grid;
+  gap: 14px;
+  align-items: start;
+}
+
+.lesson-prep,
+.lesson-play,
+.lesson-disclosure {
+  border: 1px solid var(--lesson-line);
+  border-radius: 20px;
+  background: var(--lesson-card);
+}
+
+.lesson-prep,
+.lesson-play {
+  min-width: 0;
+  padding: clamp(18px, 3vw, 28px);
+}
+
+.lesson-prep {
+  background: var(--lesson-tint);
+}
+
+.lesson-materials {
+  display: grid;
+  gap: 7px;
+  margin: 0;
+  padding: 0 0 0 19px;
+  line-height: 1.48;
+}
+
+.lesson-materials li::marker {
+  color: var(--lesson-green);
+}
+
+.lesson-steps {
+  display: grid;
+  gap: 15px;
+  margin: 0;
+  padding-inline-start: 26px;
+  line-height: 1.63;
+}
+
+.lesson-steps li {
+  padding-inline-start: 5px;
+}
+
+.lesson-steps li::marker {
+  color: var(--lesson-green);
+  font-size: 1.07em;
+  font-weight: 950;
+}
+
+.lesson-disclosure summary {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-height: 55px;
+  padding: 16px 50px 16px 20px;
+  color: var(--lesson-ink);
+  font-size: 1.04rem;
+  font-weight: 900;
+  cursor: pointer;
+  list-style: none;
+}
+
+.lesson-disclosure summary::-webkit-details-marker {
+  display: none;
+}
+
+.lesson-disclosure summary::after {
+  position: absolute;
+  inset-inline-end: 22px;
+  width: 8px;
+  height: 8px;
+  border-right: 2px solid var(--lesson-green);
+  border-bottom: 2px solid var(--lesson-green);
+  transform: translateY(-2px) rotate(45deg);
+  content: "";
+}
+
+.lesson-disclosure[open] summary::after {
+  transform: translateY(2px) rotate(225deg);
+}
+
+.lesson-disclosure summary small {
+  display: block;
+  margin-bottom: 3px;
+  color: var(--lesson-green);
+  font-size: 0.85rem;
+  font-weight: 800;
+}
+
+.lesson-disclosure-body {
+  margin: 0;
+  padding: 0 20px 20px;
+  line-height: 1.55;
+}
+
+.lesson-disclosure-body h3 {
+  margin: 14px 0 8px;
+  color: var(--lesson-green);
+  font-size: 1rem;
+}
+
+.lesson-notes {
+  display: grid;
+  gap: 13px;
+}
+
+.lesson-notes dt {
+  color: var(--lesson-green);
+  font-weight: 900;
+}
+
+.lesson-notes dd {
+  margin: 2px 0 0;
+}
+
+.lesson-navigation {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  margin-top: 24px;
+}
+
+.lesson-navigation a {
+  display: grid;
+  align-content: center;
+  gap: 4px;
+  min-height: 64px;
+  padding: 12px 14px;
+  border: 1px solid var(--lesson-line);
+  border-radius: 15px;
+  background: var(--lesson-card);
+  color: var(--lesson-green);
+  font-weight: 850;
+  line-height: 1.28;
+  text-decoration: none;
+}
+
+.lesson-navigation a:last-child {
+  text-align: right;
+}
+
+.lesson-navigation a:hover,
+.lesson-disclosure summary:hover {
+  color: var(--lesson-green);
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+.lesson-back:focus-visible,
+.lesson-navigation a:focus-visible,
+.lesson-disclosure summary:focus-visible,
+.week-lesson-link:focus-visible {
+  outline: 3px solid var(--lesson-green);
+  outline-offset: 3px;
+  border-radius: 12px;
+}
+
+@media (min-width: 700px) {
+  .lesson-layout {
+    grid-template-columns: minmax(210px, 0.7fr) minmax(0, 1.55fr);
+    gap: 18px;
+  }
+
+  .week-lessons {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .week-lesson-link {
+    grid-template-columns: minmax(0, 1fr) auto;
+    padding: 20px;
+  }
+
+  .week-letter {
+    grid-column: 1 / -1;
+  }
+
+  .week-extras {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}

@@ -1,0 +1,7 @@
+packages:
+  - "."
+overrides:
+  vite: npm:@voidzero-dev/vite-plus-core@8.3.8000
+onlyBuiltDependencies:
+  - esbuild
+  - vite-plus
