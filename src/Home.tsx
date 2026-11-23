@@ -67,6 +67,14 @@ export function Homepage({ month }: { month?: number }) {
               </span>
             )}
           </div>
+          {next?.id === "01-a" && (
+            <div className="hero-followup">
+              Уже собирали заказы?{" "}
+              <Link to="/lesson/$lessonId" params={{ lessonId: "01-b" }}>
+                Игра «Делаем поровну»
+              </Link>
+            </div>
+          )}
         </div>
         <div className="hero-art">
           <img src={artUrl("workshop")} alt="" width="1752" height="897" fetchPriority="high" />

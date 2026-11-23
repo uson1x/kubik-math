@@ -247,6 +247,17 @@ summary {
 .play-button:hover {
   background: #224a3b;
 }
+.hero-followup {
+  margin-top: 12px;
+  font-size: 15px;
+  color: #5e4e40;
+}
+.hero-followup a {
+  font-weight: 750;
+  color: var(--green);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
 .hero-duration {
   color: #655442;
   display: inline-flex;
