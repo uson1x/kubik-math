@@ -7,19 +7,15 @@ on:
 
 permissions:
   contents: read
-  pages: write
-  id-token: write
+  pages: read
 
 concurrency:
   group: github-pages
   cancel-in-progress: false
 
 jobs:
-  publish:
+  build:
     runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deploy.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
       - uses: pnpm/action-setup@v4
@@ -30,8 +26,20 @@ jobs:
       - run: pnpm install --frozen-lockfile
       - run: pnpm build
       - uses: actions/configure-pages@v5
-      - uses: actions/upload-pages-artifact@v4
+      - uses: actions/upload-pages-artifact@v5
         with:
           path: dist
-      - uses: actions/deploy-pages@v4
+
+  publish:
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      actions: read
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - uses: actions/deploy-pages@v5
         id: deploy
